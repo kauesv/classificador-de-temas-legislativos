@@ -5,42 +5,7 @@ services:
     build: .
     container_name: fastapi_app
     restart: unless-stopped
-    env_file:
-      - ./.env
-    volumes:
-      - .:/srv/app
+    environment:
+      MODEL_PATH: /srv/app/models/theme_classifier.joblib
     ports:
       - "8001:8000"
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - app_network
-
-  db:
-    image: pgvector/pgvector:pg17
-    container_name: postgres_pgvector
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: classificador
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - "127.0.0.1:5435:5432"
-    volumes:
-      - postgres17_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
-    networks:
-      - app_network
-
-networks:
-  app_network:
-    driver: bridge
-
-volumes:
-  postgres17_data:
-    name: classificador-legislativos_postgres17_data

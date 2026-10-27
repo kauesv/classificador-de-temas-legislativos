@@ -8,13 +8,6 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /srv/app
 
-# Instala dependências do sistema
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        tzdata \
-        libpq5 && \
-    rm -rf /var/lib/apt/lists/*
-
 # Instala dependências Python
 COPY requirements.txt .
 

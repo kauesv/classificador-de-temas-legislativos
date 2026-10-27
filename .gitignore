@@ -11,10 +11,17 @@ __pycache__/
 # Documentação
 docs_internas/
 superpowers/
-outputs/
 
 # Dados baixados
 proposicoes*.json
+models/
+mlruns/
+
+# Dados de saida
+outputs/*.json
+outputs/*.csv
+dataset*.json
+dataset*.csv
 
 # banco
 backup/
@@ -90,9 +97,6 @@ instance/
 
 # Scrapy stuff:
 .scrapy
-
-# Sphinx documentation
-docs/_build/
 
 # PyBuilder
 target/

@@ -5,8 +5,13 @@ fixtures/**/logs/
 .git/
 .venv/
 venv/
+data/proposicoes/
+data/processed/
+outputs/
+docs/
 .testtmp
 .tmp
+tmp*
 
 # IA
 .codex
@@ -23,4 +28,3 @@ docs_internas/
 docker-compose.yml
 db.sqlite3
 *.pyc
-.env.example
