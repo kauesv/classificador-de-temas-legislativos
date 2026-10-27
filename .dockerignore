@@ -1,0 +1,26 @@
+#   Diretórios
+__pycache__/
+staticfiles/
+fixtures/**/logs/
+.git/
+.venv/
+venv/
+.testtmp
+.tmp
+
+# IA
+.codex
+.kilo
+
+# Pastas
+docs_internas/
+
+#   Arquivos
+.gitignore
+.dockerignore
+.env
+*.env
+docker-compose.yml
+db.sqlite3
+*.pyc
+.env.example
