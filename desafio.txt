@@ -1,0 +1,23 @@
+Classificador de temas legislativos + API.
+
+Objetivo: receber o texto/ementa de uma proposição e prever uma área temática. A Câmara fornece
+proposições e arquivos oficiais de classificação temática, tornando esse um raro projeto em
+português com rótulos produzidos por uma fonte institucional.
+
+Escopo mínimo: escolher 5–10 temas com volume suficiente; coletar texto/ementa e tema; separar
+treino/validação/teste; construir TF-IDF + Logistic Regression como baseline; comparar com pelo menos
+um segundo algoritmo; expor /predict e /health em FastAPI; containerizar.
+
+Stack: Python, pandas/Polars, scikit-learn, FastAPI, pytest, MLflow e Docker. Como stretch goal, finetune um encoder em português ou use embeddings pré-treinados, mas só depois de ter um baseline
+simples.
+
+Avaliação: macro-F1, precision/recall por classe, confusion matrix e análise manual de 20–30 erros. Em
+classes desbalanceadas, inclua PR-AUC ou balanced accuracy quando aplicável.
+
+Critério de pronto: comando único reproduz o treinamento; API responde em container; teste
+automatizado cobre preprocessing + endpoint; relatório mostra baseline versus modelo escolhido;
+nenhum número de performance é colocado no README sem um conjunto de teste separado.
+
+Apresentação: GIF de 20–30 segundos da API/UI, diagrama simples, tabela de experimentos e uma
+seção “Onde o modelo falha?”. Para uma vaga júnior, esse único projeto bem acabado já conversa com
+os requisitos de programação + core ML + infraestrutura/evaluation encontrados no Google earlycareer
